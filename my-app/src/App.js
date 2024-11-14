@@ -41,8 +41,6 @@ function App() {
 
       if (target.value.length < 6) {
         setError("пароль должен быть больше 6 символов");
-      } else if (secondPassword && target.value !== secondPassword) {
-        setError("пароли не совпадают");
       } else {
         setError("");
       }
@@ -52,7 +50,6 @@ function App() {
   const onSecondPasswordChange = ({ target }) => {
     if (!submitted) {
       setSecondPassword(target.value);
-
       if (target.value !== password) {
         setError("пароли не совпадают");
       } else {
